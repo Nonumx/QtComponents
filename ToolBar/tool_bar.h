@@ -1,7 +1,5 @@
 ﻿#pragma once
 
-#include <QWidget>
-
 #include "ui_tool_bar.h"
 
 class ToolBar : public QToolBar {

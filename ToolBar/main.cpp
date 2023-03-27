@@ -1,6 +1,4 @@
-﻿#include <QApplication>
-
-#include "tool_bar.h"
+﻿#include "tool_bar.h"
 
 int main(int argc, char* argv[]) {
   QApplication app(argc, argv);
