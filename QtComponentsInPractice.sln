@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToolBar", "ToolBar\ToolBar.vcxproj", "{5638116D-C999-4FDC-9395-99D8C3F28D5D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Explorer", "Explorer\Explorer.vcxproj", "{64B9F3A2-86B7-4127-BFEC-28AC2D37B663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5638116D-C999-4FDC-9395-99D8C3F28D5D}.Debug|x64.ActiveCfg = Debug|x64
+		{5638116D-C999-4FDC-9395-99D8C3F28D5D}.Debug|x64.Build.0 = Debug|x64
+		{5638116D-C999-4FDC-9395-99D8C3F28D5D}.Release|x64.ActiveCfg = Release|x64
+		{5638116D-C999-4FDC-9395-99D8C3F28D5D}.Release|x64.Build.0 = Release|x64
+		{64B9F3A2-86B7-4127-BFEC-28AC2D37B663}.Debug|x64.ActiveCfg = Debug|x64
+		{64B9F3A2-86B7-4127-BFEC-28AC2D37B663}.Debug|x64.Build.0 = Debug|x64
+		{64B9F3A2-86B7-4127-BFEC-28AC2D37B663}.Release|x64.ActiveCfg = Release|x64
+		{64B9F3A2-86B7-4127-BFEC-28AC2D37B663}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5FB4208-6026-47F1-BFE9-AC6D81C6965D}
+	EndGlobalSection
+EndGlobal
