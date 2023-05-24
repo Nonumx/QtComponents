@@ -9,8 +9,10 @@ class ToolBar : public QToolBar {
   ToolBar(QWidget* parent = nullptr);
   ~ToolBar() override;
 
-  auto GetUI() { return ui_; }
+  const Ui::ToolBarClass* GetUI() { return &ui_; }
 
  private:
   Ui::ToolBarClass ui_;
 };
+
+

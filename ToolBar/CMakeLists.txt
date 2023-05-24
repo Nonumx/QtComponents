@@ -12,7 +12,7 @@ endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-add_executable(${PROJECT_NAME} main.cpp tool_bar.cpp tool_bar.h tool_bar.ui Resource.qrc)
+add_executable(${PROJECT_NAME} WIN32 main.cpp tool_bar.cpp tool_bar.h tool_bar.ui Resource.qrc)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets)
 
@@ -20,6 +20,9 @@ if(WIN32)
     add_custom_command(TARGET ${PROJECT_NAME}
             POST_BUILD
             COMMAND $ENV{QT5_HOME}/bin/windeployqt.exe "$<TARGET_FILE:${PROJECT_NAME}>")
+    target_link_options(${PROJECT_NAME} PRIVATE
+        $<$<CONFIG:Debug>:/SUBSYSTEM:CONSOLE>
+    )
 endif()
 
 set_target_properties(${PROJECT_NAME}
