@@ -1,26 +1,22 @@
 ﻿#pragma once
 
-#include <map>
-
-#include <QTreeWidget>
 #include <QFileSystemWatcher>
+#include <QTreeWidget>
 
-struct ProjectFilter
-{
-	QString filter_name;
-	QStringList paths;
+enum class ProjectExplorerItem {
+	Directory,
+	File,
 };
 
-class ProjectExplorer: public QTreeWidget
-{
-	Q_OBJECT
+class ProjectExplorer : public QTreeWidget {
+  Q_OBJECT
 
-public:
-	explicit ProjectExplorer(QWidget* parent, const QList<ProjectFilter>& project_filters);
+ public:
+  explicit ProjectExplorer(QWidget* parent = nullptr);
 
-private:
-	std::map<QString, QTreeWidgetItem*> item_by_dir_;
-	QFileSystemWatcher* watcher_;
+ public slots:
+  void ResolveCustomContextMenuRequest(const QPoint& pos);
 
-	void UpdateProject();
+ private:
+  QFileSystemWatcher* watcher_;
 };

@@ -1,27 +1,21 @@
-﻿#include <map>
+﻿#include "project_explorer.h"
+#include <QHeaderView>
+#include <QMenu>
 
-#include "project_explorer.h"
 
-ProjectExplorer::ProjectExplorer(QWidget* parent, const QList<ProjectFilter>& project_filters) : QTreeWidget(parent)
-{
-
-	watcher_ = new QFileSystemWatcher(this);
-
-	for (const auto& filter : project_filters)
-	{
-		item_by_dir_[filter.filter_name] = new QTreeWidgetItem(this, { filter.filter_name });
-		watcher_->addPaths(filter.paths);
-	}
-
-	setHeaderHidden(true);
-
-	UpdateProject();
+ProjectExplorer::ProjectExplorer(QWidget* parent)
+    : QTreeWidget(parent), watcher_(new QFileSystemWatcher(this)) {
+  setHeaderLabel(QStringLiteral("工程文件夹"));
+  setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(this, &QTreeWidget::customContextMenuRequested, this,
+          &ProjectExplorer::ResolveCustomContextMenuRequest);
 }
 
-void ProjectExplorer::UpdateProject()
-{
-	clear();
-	
-	auto full_file_list = watcher_->files();
-	
+void ProjectExplorer::ResolveCustomContextMenuRequest(const QPoint& pos) {
+    auto item = itemAt(pos);
+    if (item == nullptr) {
+        QMenu menu;
+        menu.addAction(QStringLiteral("新增目录"));
+        menu.exec(mapToGlobal(pos));
+    }
 }
