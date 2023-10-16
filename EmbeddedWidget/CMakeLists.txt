@@ -12,10 +12,11 @@ endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-add_executable(${PROJECT_NAME} main.cpp embedded_widget.h embedded_widget.cpp)
+add_executable(${PROJECT_NAME} main.cpp embedded_widget.h embedded_widget.cpp window_finder_win.h window_finder_win.cpp)
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC UNICODE)
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets toml11::toml11)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/3rd_party)
 
 set_target_properties(${PROJECT_NAME}
     PROPERTIES
