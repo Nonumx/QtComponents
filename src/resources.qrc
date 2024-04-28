@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/document.svg</file>
+        <file>resources/folder-filled.svg</file>
+    </qresource>
+</RCC>

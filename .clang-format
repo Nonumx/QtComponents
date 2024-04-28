@@ -1,1 +1,10 @@
-﻿BasedOnStyle: Google
+BasedOnStyle: LLVM
+
+AllowShortIfStatementsOnASingleLine: false
+BreakBeforeBraces: Allman
+ColumnLimit: 0
+IndentCaseLabels: false
+IndentWidth: 4
+UseTab: Never
+PointerAlignment: Left
+AccessModifierOffset: -4
