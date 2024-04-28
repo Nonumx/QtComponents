@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include "../pc_widgets_global.h"
 #include <QWidget>
 
 #ifdef Q_OS_WIN
@@ -7,7 +8,7 @@ class WindowFinderWin;
 using WindowFinder = WindowFinderWin;
 #endif
 
-class EmbeddedWidget : public QWidget {
+class PC_WIDGETS_EXPORT EmbeddedWidget : public QWidget {
   Q_OBJECT
 
 public:

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.25)
 project(pc_widgets)
 
+set(CMAKE_CXX_STANDARD 17)
+
 set(CMAKE_PREFIX_PATH $ENV{Qt5Home})
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
